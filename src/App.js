@@ -10,19 +10,17 @@ import './App.css';
 
 // Extra credit: make the spinning animated.
 
-class Slot {
-  constructor(val) {
-    this.val = val
-  }
-}
+// class Slot {
+//   constructor(val) {
+//     this.val = val
+//   }
+// }
 
 function App() {
   const [slots, setSlots] = useState([null, null, null]) //this will store all the slots after randomized 
-  // const [slot, setSlot] = useState()
   const [display, setDisplay] = useState([])
-  // useEffect(() => {
   const [message, setMessage] = useState('idkman')
-  // }, [])
+
   function randomized() {
     let copySlots = slots
     let temptSlot
@@ -30,10 +28,9 @@ function App() {
     let index = Math.floor(Math.random(3) * Math.floor(3))
 
     temptSlot = slotLib[index]
-    // setSlot(temptSlot)
     copySlots.push(temptSlot)
     setSlots(copySlots)
-    console.log(slots, index, 'slots and index')
+
   }
 
 
@@ -49,11 +46,7 @@ function App() {
       copySlots = slots
       checkWinner(copySlots)
     }
-    // console.log(slots[0], 'pull')
-    // checkWinner() //check winner
-    // setSlots([]) //set it back to 
     setDisplay(slots)
-
     setSlots([])
   }
 
